@@ -18,26 +18,27 @@ public class WeatherForecast {
         return resultMap;
     }
 
-    public double calculateAverage() {
+    public Double calculateAverage() {
         double sum = 0.0;
+        double average = 0.0;
         Double[]toCalc = {};
         temperatures.getTemperatures().entrySet().toArray(toCalc);
             for(Double eachOf : toCalc) {
                 sum += eachOf;
         }
-            return sum / toCalc.length;
+            return average = sum / toCalc.length;
     }
 
     public Double calcMedian() {
         Double[]list = {};
         temperatures.getTemperatures().entrySet().toArray(list);
-        Arrays.sort(list);
+        Arrays.sort(list);//korzystałem z metody statycznej z arrays.
         Double median;
         if(list.length % 2 == 0) {
             median = ((double) list[list.length / 2] + (double) list[list.length / 2 - 1]) / 2;
         } else {
             median = (double)list[list.length/2];
         }
-
+        return null;
     }
 }

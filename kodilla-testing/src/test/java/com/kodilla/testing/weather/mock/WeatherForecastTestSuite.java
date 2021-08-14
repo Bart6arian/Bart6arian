@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.HashMap;
@@ -41,8 +40,24 @@ public class WeatherForecastTestSuite {
         temperaturesMap.put("Wrocław", 25.3);
         temperaturesMap.put("Rzeszów", 24.4);
         temperaturesMap.put("Gdańsk", 26.6);
-        when(temperaturesMock.getTemperatures().entrySet().toArray()).thenReturn(weatherForecast.calculateAverage());
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         //when
-
+        double average = weatherForecast.calculateAverage();
+        //then
+        Assertions.assertEquals(average, weatherForecast.calculateAverage());
+    }
+    @Test
+    void testCalcMedian() {
+        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
+        Map<String, Double> temperaturesMap = new HashMap<>();
+        temperaturesMap.put("Gdynia", 22.1);
+        temperaturesMap.put("Wrocław", 25.3);
+        temperaturesMap.put("Rzeszów", 24.4);
+        temperaturesMap.put("Gdańsk", 26.6);
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+        //when
+        Double median = weatherForecast.calcMedian();
+        //then
+        Assertions.assertEquals(median, temperaturesMap.size());
     }
 }
