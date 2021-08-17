@@ -35,14 +35,13 @@ public class StatsCounter {
     }
 
     public int commentsLessThanPosts() {
-        if (posts > comments) {
+        if(posts > comments);
             return 0;
-        } else {
-            if (comments > posts) {
-                return 1;
-            }
-        }
-        return 0;
+    }
+
+    public int postsLessThanComments() {
+        if(comments > posts);
+            return 1;
     }
 
     public int postsCount() {

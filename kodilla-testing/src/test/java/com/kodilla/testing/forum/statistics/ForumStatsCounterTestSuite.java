@@ -112,7 +112,7 @@ public class ForumStatsCounterTestSuite {
         //then
         Assertions.assertEquals(posts500.size(), statsCounter.postsCount());
         Assertions.assertEquals(comments242.size(), statsCounter.commentsCount());
-        Assertions.assertEquals(comments242.size(), posts500.size());
+        Assertions.assertEquals(0, statsCounter.commentsLessThanPosts());
     }
     @Test
     void testIfCommentsMoreThanPosts() {
@@ -127,7 +127,7 @@ public class ForumStatsCounterTestSuite {
         //then
         Assertions.assertEquals(posts20.size(), statsCounter.postsCount());
         Assertions.assertEquals(comments600.size(), statsCounter.commentsCount());
-        Assertions.assertEquals(comments600.size(), posts20.size());
+        Assertions.assertEquals(1, statsCounter.postsLessThanComments());
     }
     @Test
     void testNoUsers() {
