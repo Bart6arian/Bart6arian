@@ -14,27 +14,34 @@ public class StatsCounter {
     private double averageCommentsPerPost;
 
     public double getAveragePostsPerUser() {
-        if(posts > 0) {
-            return averagePostsPerUser = (posts / users);
+        if(posts > 0 && users > 0) {
+            return averagePostsPerUser = ((double) posts / users);
         }
-        return 0;
+        return 0.0;
     }
 
     public double getAverageCommentsPerUser() {
-        if(users > 0) {
-            return averageCommentsPerUser = (comments / users);
+        if(comments > 0 && users > 0) {
+            return averageCommentsPerUser = ((double) comments / users);
         }
-        return 0;
+        return 0.0;
     }
 
     public double getAverageCommentsPerPost() {
-        if(comments > 0) {
-            return averageCommentsPerPost = (comments / posts);
+        if(comments > 0 && posts > 0) {
+            return averageCommentsPerPost = ((double) comments / posts);
         }
-        return 0;
+        return 0.0;
     }
 
     public int commentsLessThanPosts() {
+        if (posts > comments) {
+            return 0;
+        } else {
+            if (comments > posts) {
+                return 1;
+            }
+        }
         return 0;
     }
 
@@ -60,14 +67,14 @@ public class StatsCounter {
 
     public void calculateAdvStatistics(Statistics statistics) {
 
-        this.users = statistics.usersNames().size();
-        this.comments = statistics.commentsCount();
-        this.posts = statistics.postsCount();
+        users = statistics.usersNames().size();
+        comments = statistics.commentsCount();
+        posts = statistics.postsCount();
         averageCommentsPerPost = getAverageCommentsPerUser();
         averagePostsPerUser = getAveragePostsPerUser();
         averageCommentsPerPost = getAveragePostsPerUser();
-
     }
+
     public void showStats() {
         System.out.println("Average comments per post: "+getAverageCommentsPerPost() + "\n" +
                 "Average comments per user: " +getAverageCommentsPerUser() +"\n" +
