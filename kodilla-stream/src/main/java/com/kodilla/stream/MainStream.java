@@ -1,17 +1,12 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.lambda.ExpressionExecutor;
-import com.kodilla.stream.reference.FunctionalCalculator;
+import com.kodilla.stream.iterate.NumberGenerator;
 
 public class MainStream {
     public static void main(String[] args) {
         System.out.println("Welcome to module 7 - Stream");
-        System.out.println();
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("Boring text", (decor) -> "n0w b3tt3r");
-        System.out.println();
-        poemBeautifier.beautify("Add some marks", (decor) -> "_-*N3w 'n 4r3sH*-_");
-        poemBeautifier.beautify("Add on this", (decor) -> "---.*->"+decor+"..._-");
+
+        System.out.println("Using Stream to generate evens from 3 to 23");
+        NumberGenerator.generateEven(23);
     }
 }
