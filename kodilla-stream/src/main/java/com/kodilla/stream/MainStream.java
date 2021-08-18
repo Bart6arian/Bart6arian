@@ -12,5 +12,6 @@ public class MainStream {
         poemBeautifier.beautify("Boring text", (decor) -> "n0w b3tt3r");
         System.out.println();
         poemBeautifier.beautify("Add some marks", (decor) -> "_-*N3w 'n 4r3sH*-_");
+        poemBeautifier.beautify("Add on this", (decor) -> "---.*->"+decor+"..._-");
     }
 }
