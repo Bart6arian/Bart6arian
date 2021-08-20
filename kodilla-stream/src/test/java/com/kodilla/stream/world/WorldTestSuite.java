@@ -16,7 +16,7 @@ public class WorldTestSuite {
     private static World world;
     private Continent continent;
     private Country country;
-    private static int testsToDo =4;
+    private static int testsToDo =1;
 
 
     @BeforeEach
