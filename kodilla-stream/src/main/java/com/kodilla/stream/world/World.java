@@ -11,8 +11,9 @@ public final class World {
 
     }
 
-    public boolean addContinent(Continent continent) {
-        return continents.add(continent);
+    public Set<Continent> addContinent(Continent continent) {
+            continents.add(continent);
+            return continents;
     }
 
     public Set<Continent> getContinents() {
