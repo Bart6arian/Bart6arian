@@ -11,9 +11,8 @@ public final class World {
 
     }
 
-    public Set<Continent> addContinent(Continent continent) {
+    public void addContinent(Continent continent) {
             continents.add(continent);
-            return continents;
     }
 
     public Set<Continent> getContinents() {
