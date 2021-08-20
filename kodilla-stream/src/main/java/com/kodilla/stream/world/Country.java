@@ -59,7 +59,7 @@ public final class Country implements Inhabitants {
 
     @Override
     public BigDecimal getInhabitantsQuantity() {
-        BigDecimal peopleInCountry = new BigDecimal(getPeople());
+        BigDecimal peopleInCountry = new BigDecimal(people);
         return peopleInCountry;
     }
 
