@@ -22,6 +22,7 @@ public final class Country implements Inhabitants {
         return countryName;
     }
 
+
     public String getCapitol() {
         return capital;
     }
@@ -58,7 +59,7 @@ public final class Country implements Inhabitants {
 
     @Override
     public BigDecimal getInhabitantsQuantity() {
-        BigDecimal peopleInCountry = new BigDecimal(people);
+        BigDecimal peopleInCountry = new BigDecimal(getPeople());
         return peopleInCountry;
     }
 
