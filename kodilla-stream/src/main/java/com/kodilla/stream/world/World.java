@@ -3,7 +3,6 @@ package com.kodilla.stream.world;
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public final class World {
     private final Set<Continent> continents = new HashSet<>();
@@ -12,8 +11,8 @@ public final class World {
 
     }
 
-    public Continent addContinent(Continent continent) {
-        return continent;
+    public boolean addContinent(Continent continent) {
+        return continents.add(continent);
     }
 
     public Set<Continent> getContinents() {

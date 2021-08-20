@@ -13,8 +13,8 @@ public final class Continent {
         this.countriesNumber = countriesNumber;
     }
 
-    public Country addCountry(Country country) {
-        return country;
+    public boolean addCountry(Country country) {
+        return countries.add(country);
     }
 
     public String getContinentName() {
