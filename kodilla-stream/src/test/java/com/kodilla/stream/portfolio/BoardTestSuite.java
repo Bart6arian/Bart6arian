@@ -3,8 +3,10 @@ package com.kodilla.stream.portfolio;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -137,21 +139,14 @@ public class BoardTestSuite {
         //when
         List<TaskList> inProgressTask = new ArrayList<>();
         inProgressTask.add(new TaskList("InProgress"));
-        int resultDays = project.getTaskLists().stream()
+
+        OptionalDouble resultDays = project.getTaskLists().stream()
                 .filter(inProgressTask::contains)
                 .flatMap(ip -> ip.getTasks().stream())
-                .map(t->t.getCreated().until(LocalDate.now()))
-                .reduce((sum, actual) -> sum = sum.plus(actual)).get().getDays();
+                .mapToInt(t-> (int) ChronoUnit.DAYS.between(t.getCreated(), LocalDate.now()))
+                .average();
 
-        long tasksDone = project.getTaskLists().stream()
-                .filter(inProgressTask::contains)
-                .flatMap(ip -> ip.getTasks().stream())
-                .map(Task::getCreated)
-                .count();
-
-        double average = (double) (resultDays/tasksDone);
         //then
-        assertEquals(3, tasksDone);
-        assertEquals(3, average);
+        assertEquals(1, resultDays);
     }
 }
