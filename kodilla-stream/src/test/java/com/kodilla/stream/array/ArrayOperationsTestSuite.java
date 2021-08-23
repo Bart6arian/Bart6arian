@@ -21,7 +21,7 @@ public class ArrayOperationsTestSuite {
                 .map(t -> numbers[t])
                 .average()
                 .getAsDouble();
-        assertEquals(0, average);
+        assertEquals(12.8, average);
 
     }
 }
