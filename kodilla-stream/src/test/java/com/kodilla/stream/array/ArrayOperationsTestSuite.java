@@ -3,8 +3,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Arrays;
-import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
 public class ArrayOperationsTestSuite {
@@ -19,9 +17,8 @@ public class ArrayOperationsTestSuite {
         IntStream.range(0, numbers.length)
                 .forEach(number -> System.out.println(numbers[number]));
 
-        OptionalDouble sumNumbers = IntStream.range(0, Arrays.stream(numbers).sum())
-                .average();
-        assertEquals(0, sumNumbers);
+        double average = IntStream.range(0, numbers.length).asDoubleStream().average().getAsDouble();
+        assertEquals(0, average);
 
     }
 }

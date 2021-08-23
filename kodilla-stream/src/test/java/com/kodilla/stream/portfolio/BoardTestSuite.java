@@ -6,7 +6,6 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -140,11 +139,11 @@ public class BoardTestSuite {
         List<TaskList> inProgressTask = new ArrayList<>();
         inProgressTask.add(new TaskList("InProgress"));
 
-        OptionalDouble resultDays = project.getTaskLists().stream()
+        double resultDays = project.getTaskLists().stream()
                 .filter(inProgressTask::contains)
                 .flatMap(ip -> ip.getTasks().stream())
                 .mapToInt(t-> (int) ChronoUnit.DAYS.between(t.getCreated(), LocalDate.now()))
-                .average();
+                .average().getAsDouble();
 
         //then
         assertEquals(1, resultDays);
