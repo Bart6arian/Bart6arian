@@ -5,14 +5,20 @@ import java.util.EnumSet;
 public class Arena {
     private Figures figures;
     private GameResult result;
-    private EnumSet<Figures> figsSet = EnumSet.of(Figures.AIRSHIP, Figures.LIZARD, Figures.PAPER, Figures.ROCK, Figures.MAMMOTH, Figures.SCISSORS);
+    private static EnumSet<Figures> figsSet = EnumSet.of(Figures.AIRSHIP, Figures.LIZARD, Figures.PAPER, Figures.ROCK, Figures.MAMMOTH, Figures.SCISSORS);
 
     public Arena(Figures figures) {
         this.figures = figures;
     }
 
-    public EnumSet<Figures> getFigsSet() {
+    public static EnumSet<Figures> getFigsSet() {
         return figsSet;
+    }
+
+    public static void getInstruction() {
+        for(Figures figure : Figures.values()) {
+            System.out.println(figure+" | Dedicated key for that figure to press - "+"["+figure.getType()+"]\n");
+        }
     }
 
     public void figsRules() {
@@ -58,6 +64,5 @@ public class Arena {
                 break;
         }
     }
-    public void figFight() {
-    }
+
 }
