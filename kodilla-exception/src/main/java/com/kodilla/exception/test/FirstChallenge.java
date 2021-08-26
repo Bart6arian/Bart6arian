@@ -20,10 +20,8 @@ public class FirstChallenge {
     public static void main(String[] args) throws ArithmeticException {
         FirstChallenge firstChallenge = new FirstChallenge();
         double result = firstChallenge.divide(3, 0);
-        double result2 = firstChallenge.divide(0, 5);
 
-        System.out.println("Don't try this at home! \n\nResults are following: ");
+        System.out.println("Don't try this at home! \n\nResults is following: ");
         System.out.println(result);
-        System.out.println(result2);
     }
 }
