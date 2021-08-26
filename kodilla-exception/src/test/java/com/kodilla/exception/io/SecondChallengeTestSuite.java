@@ -19,23 +19,10 @@ public class SecondChallengeTestSuite {
         int setNum = random.nextInt(3);
         String number = "incorrect numbers";
         //then
-        assertThrows(ChallengeException.class, () -> secondChallenge.probablyIWillThrowException(2, setNum));
+        assertAll(
+                () -> assertThrows(ChallengeException.class, () -> secondChallenge.probablyIWillThrowException(2, setNum)),
+                () -> assertThrows(ChallengeException.class, () -> secondChallenge.probablyIWillThrowException(setNum, 1.5)),
+                () -> assertThrows(ChallengeException.class, () -> secondChallenge.probablyIWillThrowException(0, setNum))
+        );
     }
-    @Test
-    void testIfOneIsOk() {
-        SecondChallenge secondChallenge = new SecondChallenge();
-        Random random = new Random();
-        int setNum = random.nextInt(3);
-        //then
-        assertThrows(ChallengeException.class, () -> secondChallenge.probablyIWillThrowException(setNum, 1.5));
-    }
-    @Test
-    void testIfOneIs0() {
-        SecondChallenge secondChallenge = new SecondChallenge();
-        Random random = new Random();
-        int setNum = random.nextInt(3);
-        //then
-        assertThrows(ChallengeException.class, () -> secondChallenge.probablyIWillThrowException(0, setNum));
-    }
-
 }
