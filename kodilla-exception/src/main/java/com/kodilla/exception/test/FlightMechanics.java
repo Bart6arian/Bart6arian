@@ -17,12 +17,10 @@ public class FlightMechanics {
             flightRadar.put("ICW", false);
             flightRadar.put("NPC", false);
 
-            for(Map.Entry<String, Boolean> entry : flightRadar.entrySet()) {
                 if(flightRadar.containsKey(flight.getArrivalAirport()) || flightRadar.containsKey(flight.getDepartureAirport())) {
                     System.out.println("Availability of following airports: \n"+flightRadar.get(flight.getDepartureAirport()) +
                             "\n" +flightRadar.get(flight.arrivalAirport));
                     throw new RouteNotFoundException();
-                }
             }
             return flightRadar;
     }

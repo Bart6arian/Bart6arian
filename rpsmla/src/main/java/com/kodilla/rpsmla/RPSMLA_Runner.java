@@ -29,9 +29,8 @@ public class RPSMLA_Runner {
         int numberOfRounds = UserDialogs.getNumberOfRounds();
         int figGetter = UserDialogs.getFigure();
         //
-        int rounds = UserDialogs.roundsLeft(numberOfRounds);
-        while(rounds > 0) {};
-        //
+        UserDialogs.roundsLeft(numberOfRounds);
+        UserDialogs.choseFigure(figGetter);
 
     }
 }
