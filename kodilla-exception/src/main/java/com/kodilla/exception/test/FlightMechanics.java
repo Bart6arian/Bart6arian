@@ -18,9 +18,9 @@ public class FlightMechanics {
             flightRadar.put("NPC", false);
 
             for(Map.Entry<String, Boolean> entry : flightRadar.entrySet()) {
-                if((entry.getKey() == flight.getDepartureAirport() == entry.getValue() == false) ||
-                entry.getKey() == flight.getArrivalAirport() == entry.getValue() == false) {
-                    System.out.println("Airport: " +entry.getKey() +" [not available]\n");
+                if(flightRadar.containsKey(flight.getArrivalAirport()) || flightRadar.containsKey(flight.getDepartureAirport())) {
+                    System.out.println("Availability of following airports: \n"+flightRadar.get(flight.getDepartureAirport()) +
+                            "\n" +flightRadar.get(flight.arrivalAirport));
                     throw new RouteNotFoundException();
                 }
             }
@@ -29,8 +29,9 @@ public class FlightMechanics {
 
     public static void main(String[] args) {
 
+
         try {
-            FlightMechanics.findFlight(new Flight("LAX", "NPC"));
+            FlightMechanics.findFlight(new Flight("LAX", "ICW"));
         } catch (RouteNotFoundException e) {
             System.out.println("Can not find the airport");
         } finally {

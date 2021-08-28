@@ -25,13 +25,13 @@ public class RPSMLA_Runner {
         //
         String inputUser = UserDialogs.getUserName();
         UserDialogs.sayHello(inputUser);
+        GameMechanics.difficulty();
         int numberOfRounds = UserDialogs.getNumberOfRounds();
         int figGetter = UserDialogs.getFigure();
-        UserDialogs.roundsLeft(numberOfRounds);
-        UserDialogs.choseFigure(figGetter);
         //
-
-
+        int rounds = UserDialogs.roundsLeft(numberOfRounds);
+        while(rounds > 0) {};
+        //
 
     }
 }

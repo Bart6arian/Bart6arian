@@ -3,15 +3,17 @@ package com.kodilla.rpsmla;
 import java.util.Scanner;
 
 public class UserDialogs {
+
     public static String getUserName() {
         System.out.println("How do you call yourself, player?");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
+
     public static int getNumberOfRounds() {
         Scanner scanner = new Scanner(System.in);
         while(true) {
-            System.out.println("How many rounds you want to play?");
+            System.out.println("How many rounds want you to play?");
             String text = scanner.nextLine();
             try {
                 int number = Integer.parseInt(text);
@@ -24,16 +26,17 @@ public class UserDialogs {
         }
     }
 
-    public static void roundsLeft(int numberOfRounds) {
+    public static int roundsLeft(int numberOfRounds) {
         int roundsToGo = 0;
-        while(numberOfRounds != roundsToGo) {
+        while((numberOfRounds > roundsToGo) && numberOfRounds > 0) {
             for(int x = 1; x < numberOfRounds; x++) {
-                System.out.println("Round #" + x + " has been done!");
                 numberOfRounds--;
+                System.out.println("Rounds to go: " +numberOfRounds);
                 roundsToGo++;
-                System.out.println("Rounds left: "+roundsToGo);
+                System.out.println("Rounds done: "+ roundsToGo);
             }
         }
+        return roundsToGo;
     }
 
     public static void sayHello(String inputUser) {
@@ -46,7 +49,7 @@ public class UserDialogs {
         return scanner.nextInt();
     }
 
-    public static void choseFigure(int figGetter) {
+    public static boolean choseFigure(int figGetter) {
         if(figGetter == 1) {
             System.out.println("ROCK!");
         } else {
@@ -71,5 +74,6 @@ public class UserDialogs {
                 }
             }
         }
+        return false;
     }
 }
