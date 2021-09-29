@@ -1,6 +1,7 @@
 package com.kodilla.good.patterns.challenges;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MovieStore {
 
@@ -22,11 +23,10 @@ public class MovieStore {
         booksTitlesWithTranslations.put("AV", avengersTranslations);
         booksTitlesWithTranslations.put("FL", flashTranslations);
 
-        booksTitlesWithTranslations.values().stream()
+        String all = booksTitlesWithTranslations.values().stream()
                 .flatMap(Collection::stream)
-                .map(str -> str + "!")
-                .forEach(System.out::print);
-
+                .collect(Collectors.joining("!"));
+        System.out.println(all);
     }
 
     public static void main(String[] args) {
