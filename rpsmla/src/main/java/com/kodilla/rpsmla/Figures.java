@@ -1,5 +1,6 @@
 package com.kodilla.rpsmla;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public enum Figures {
@@ -14,9 +15,4 @@ public enum Figures {
         return type;
     }
 
-    public int generateRandom() {
-        int computerMove = new Random().nextInt(5);
-        computerMove = type;
-        return computerMove;
-    }
 }

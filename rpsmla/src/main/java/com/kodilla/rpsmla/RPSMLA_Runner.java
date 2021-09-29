@@ -7,7 +7,7 @@ public class RPSMLA_Runner {
 
     public static void main(String[] args) {
         System.out.println("*==WELCOME TO THE GAME==*\n");
-        System.out.println("Available figures: " +'\n');
+        System.out.println("Available figures: " + '\n');
         Arena.getInstruction();
         System.out.println("-- > RULES <--\n");
         Arena rock = new Arena(Figures.ROCK);
@@ -23,14 +23,22 @@ public class RPSMLA_Runner {
         Arena airship = new Arena(Figures.AIRSHIP);
         airship.figsRules();
         //
+
+        String play = GameMechanics.play();
+        GameMechanics.endGame(play);
         String inputUser = UserDialogs.getUserName();
         UserDialogs.sayHello(inputUser);
-        GameMechanics.difficulty();
         int numberOfRounds = UserDialogs.getNumberOfRounds();
-        int figGetter = UserDialogs.getFigure();
-        //
-        UserDialogs.roundsLeft(numberOfRounds);
-        UserDialogs.choseFigure(figGetter);
-
+        int roundsLeft = 0;
+        while(numberOfRounds > 0) {
+            int figGetter = UserDialogs.getFigure();
+            UserDialogs.choseFigure(figGetter);
+            GameMechanics.setRandomFigure();
+            numberOfRounds--;
+            System.out.println("Rounds left: "+numberOfRounds);
+            roundsLeft++;
+            System.out.println("Rounds done: "+roundsLeft);
+        }
+        System.out.println("Thank you for play!");
     }
 }

@@ -26,18 +26,6 @@ public class UserDialogs {
         }
     }
 
-    public static int roundsLeft(int numberOfRounds) {
-        int roundsToGo = 0;
-        while((numberOfRounds > roundsToGo) && numberOfRounds > 0) {
-            for(int x = 1; x < numberOfRounds; x++) {
-                numberOfRounds--;
-                System.out.println("Rounds to go: " +numberOfRounds);
-                roundsToGo++;
-                System.out.println("Rounds done: "+ roundsToGo);
-            }
-        }
-        return roundsToGo;
-    }
 
     public static void sayHello(String inputUser) {
         System.out.println("Welcome "+inputUser +"! Lets start the game!");
@@ -50,23 +38,23 @@ public class UserDialogs {
     }
 
     public static boolean choseFigure(int figGetter) {
-        if(figGetter == 1) {
-            System.out.println("ROCK!");
+        if(figGetter == Figures.ROCK.getType()) {
+            System.out.println("Your choice: ROCK!");
         } else {
-            if(figGetter == 2) {
-                System.out.println("PAPER!");
+            if(figGetter == Figures.PAPER.getType()) {
+                System.out.println("Your choice: PAPER!");
             } else {
-                if(figGetter == 3) {
-                    System.out.println("SCISSORS!");
+                if(figGetter == Figures.SCISSORS.getType()) {
+                    System.out.println("Your choice: SCISSORS!");
                 } else {
-                    if(figGetter == 4) {
-                        System.out.println("MAMMOTH!");
+                    if(figGetter == Figures.MAMMOTH.getType()) {
+                        System.out.println("Your choice: MAMMOTH!");
                     } else {
-                        if(figGetter== 5) {
-                            System.out.println("AIRSHIP!");
+                        if(figGetter== Figures.AIRSHIP.getType()) {
+                            System.out.println("Your choice: AIRSHIP!");
                         } else {
-                            if(figGetter == 6) {
-                                System.out.println("LIZARD!");
+                            if(figGetter == Figures.LIZARD.getType()) {
+                                System.out.println("Your choice: LIZARD!");
                             } else
                                 System.out.println("Wrong figure, please try again");
                         }
@@ -76,4 +64,5 @@ public class UserDialogs {
         }
         return false;
     }
+
 }
