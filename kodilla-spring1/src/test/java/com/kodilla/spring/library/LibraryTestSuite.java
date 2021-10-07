@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 @SpringBootTest
 class LibraryTestSuite {
 
-    /*@Autowired
+    @Autowired
     private Library library;
 
     @Test
@@ -28,5 +28,5 @@ class LibraryTestSuite {
         library.saveToDb();
         //Then
         //do nothing*/
-   // }
+    }
 }

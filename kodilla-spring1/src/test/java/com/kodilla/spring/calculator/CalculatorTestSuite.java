@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class CalculatorTestSuite {
 
-   /* @Autowired
+    @Autowired
     Calculator calculator;
 
     @Test
@@ -17,5 +17,5 @@ public class CalculatorTestSuite {
         calculator.div(2, 5);
         calculator.mul(2, 5);
         calculator.add(2,5);
-    }*/
+    }
 }
