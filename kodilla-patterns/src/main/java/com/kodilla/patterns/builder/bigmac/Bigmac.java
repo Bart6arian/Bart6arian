@@ -3,7 +3,7 @@ package com.kodilla.patterns.builder.bigmac;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bigmac {
+public final class Bigmac {
 
     private final String bun;
     private final int burgers;
