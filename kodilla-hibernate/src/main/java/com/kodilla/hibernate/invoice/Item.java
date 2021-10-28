@@ -16,6 +16,7 @@ public class Item {
     private BigDecimal value;
     private int quantity;
     private List<Product> products = new ArrayList<>();
+    private Invoice invoice;
 
     public Item() {
     }
@@ -59,6 +60,14 @@ public class Item {
     @JoinColumn(name = "PRODUCTS_ID")
     public List<Product> getProducts() {
         return products;
+    }
+
+    public Invoice getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
     }
 
     private void setId(int id) {

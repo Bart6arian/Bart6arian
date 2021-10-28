@@ -10,5 +10,5 @@ import java.util.List;
 @Transactional
 @Repository
 public interface TaskListDao extends CrudRepository<TaskList, Integer> {
-    List<TaskList> findByListName(String listName);
+    List<TaskList> findByListName(String id);
 }
