@@ -25,13 +25,14 @@ public class InvoiceDaoTestSuite {
         Invoice invoice = new Invoice(3, "/09/2021");
         invoice.getItems().add(item1);
         invoice.getItems().add(item2);
-        invoiceDao.save(invoice);
+        item1.setInvoice(invoice);
+        item2.setInvoice(invoice);
 
         //when
+        invoiceDao.save(invoice);
         String id = (invoice.getId() +""+ invoice.getNumber());
-        List<Invoice> result = invoiceDao.findInvoiceByNumberNotNull(id);
 
         //then
-        assertEquals(1, result.size());
+        assertEquals("3/09/2021", id);
     }
 }
