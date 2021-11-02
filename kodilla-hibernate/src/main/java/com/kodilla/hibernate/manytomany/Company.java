@@ -7,7 +7,8 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.showFirstThreeChars",
-        query = "FROM Company Where REGEXP_SUBSTR()"
+        query = "FROM Company Where company_name LIKE CONCAT(:NAME, '%', '%')",
+        resultClass = Company.class
 )
 
 @Entity
