@@ -56,6 +56,12 @@ public class Item {
         return quantity;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "INVOICES")
+    public Invoice getInvoice() {
+        return invoice;
+    }
+
     public void setInvoice(Invoice invoice) {
         this.invoice = invoice;
     }

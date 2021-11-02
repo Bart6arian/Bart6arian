@@ -39,5 +39,8 @@ public class InvoiceDaoTestSuite {
 
         //then
         assertEquals("3/09/2021", id);
+
+        //cleanUp
+        //invoiceDao.deleteAll();
     }
 }

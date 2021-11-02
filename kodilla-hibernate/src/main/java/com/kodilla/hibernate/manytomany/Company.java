@@ -5,6 +5,11 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.showFirstThreeChars",
+        query = "FROM Company Where REGEXP_SUBSTR()"
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

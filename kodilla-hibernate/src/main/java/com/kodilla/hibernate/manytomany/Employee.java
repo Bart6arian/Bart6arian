@@ -1,11 +1,16 @@
 package com.kodilla.hibernate.manytomany;
 
 import com.sun.istack.NotNull;
+import org.springframework.data.jdbc.repository.query.Query;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+    @NamedQuery(
+            name = "Employee.showEmployeeLastname",
+            query = "FROM Employee Where lastname > :LASTNAME"
+    )
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
