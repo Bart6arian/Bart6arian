@@ -1,7 +1,6 @@
 package com.kodilla.hibernate.manytomany;
 
 import com.sun.istack.NotNull;
-import org.springframework.data.jdbc.repository.query.Query;
 
 import javax.persistence.*;
 import java.util.ArrayList;
