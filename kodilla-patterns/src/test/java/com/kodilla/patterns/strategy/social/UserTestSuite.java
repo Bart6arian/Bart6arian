@@ -3,7 +3,7 @@ package com.kodilla.patterns.strategy.social;
 import com.kodilla.patterns.strategy.social.media.FacebookPublisher;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UserTestSuite {
 

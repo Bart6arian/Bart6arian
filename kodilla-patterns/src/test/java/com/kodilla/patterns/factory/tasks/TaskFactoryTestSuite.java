@@ -1,13 +1,14 @@
 package com.kodilla.patterns.factory.tasks;
 
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class TaskFactoryTestSuite {
 
-    @Before
+    @BeforeEach
     public TaskFactory generateFactory() {
         TaskFactory factory = new TaskFactory();
         return factory;

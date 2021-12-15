@@ -1,0 +1,23 @@
+{
+"name":"E39 M5",
+"brand":"BMW",
+"seats": [
+"seat1":{
+    "materials" : "leather",
+    "color" : "black"
+},
+"seat2": {
+    "materials" : "leather",
+    "color" : "black"
+},
+"seat3": {
+    "materials" : "leather",
+    "color" : "black"
+},
+"seat4": {
+    "materials" : "leather",
+    "color" : "black"
+}
+]
+ "vol": 4941
+}
