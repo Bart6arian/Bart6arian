@@ -39,7 +39,7 @@ public class FacadeTestSuite {
     @Test
     void findCompany() {
         //given
-        // when
+        //when
         Company result = searchFacade.findCompany("afd");
         //then
         assertEquals(companyDao, result);
