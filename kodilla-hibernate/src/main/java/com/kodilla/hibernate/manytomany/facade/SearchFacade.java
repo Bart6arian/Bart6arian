@@ -10,14 +10,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class SearchFacade {
 
-    private final CompanyDao company;
-    private final EmplyeeDao emplyee;
+    private CompanyDao company;
+    private EmplyeeDao emplyee;
 
     @Autowired
     public SearchFacade(CompanyDao company, EmplyeeDao emplyee) {
         this.company = company;
         this.emplyee = emplyee;
     }
+
 
     public Company findCompany(String companyName) {
         return company.searchCompanyByChars(companyName).orElseThrow().get(0);
